@@ -1,0 +1,26 @@
+import math
+import random
+lower=int(input("enter lower bound"))
+upper=int(input("enter upper bound"))
+
+x=random.randint(lower,upper)
+chance=math.ceil(math.log(upper-lower+1,2))
+print(f"\n\t you have only",chance)
+count=0
+flag=False
+while count<chance:
+  count += 1
+  guess=int(input("guess a number"))
+  if guess==x:
+    print("you won the game in {} try".format(count))
+    flage=True
+    break
+  elif guess<x:
+    print("you have guessed too small")
+  elif guess>x:
+    print("you have guessed too high")
+if not flag:
+  print("you have lost the game")
+  print("the number is",x)
+  
+
